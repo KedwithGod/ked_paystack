@@ -7,12 +7,14 @@ import 'package:royal_palm_villa/Models/services/accountVerification/resolvePhon
 import 'package:royal_palm_villa/Models/services/controlPanel/fetchPaymentSession.dart';
 import 'package:royal_palm_villa/Models/services/controlPanel/updatePaymentSession.dart';
 import 'package:royal_palm_villa/Models/services/transaction/chargeAuthorization.dart';
+import 'package:royal_palm_villa/Models/services/transaction/exportTransaction.dart';
 import 'package:royal_palm_villa/Models/services/transaction/fetchTransaction.dart';
 import 'package:royal_palm_villa/Models/services/transaction/initializePayment.dart';
 import 'package:royal_palm_villa/Models/services/miscellaneous/listOfBanks.dart';
 import 'package:royal_palm_villa/Models/services/transaction/listTransaction.dart';
 import 'package:royal_palm_villa/Models/services/transaction/totalTransaction.dart';
 import 'package:royal_palm_villa/Models/services/transaction/verifyTransaction.dart';
+import 'package:royal_palm_villa/Models/services/transaction/viewTransactionTimeline.dart';
 
 import '../services/accountVerification/bvnVerification.dart';
 
@@ -37,6 +39,9 @@ ListOfTransaction listOfTransaction=ListOfTransaction();
 FetchTransaction fetchTransaction=FetchTransaction();
 ChargeAuthorization chargeAuthorization=ChargeAuthorization();
 TotalTransaction totalTransaction=TotalTransaction();
+ViewTransactionTimeLine viewTransactionTimeLine=ViewTransactionTimeLine();
+ExportTransaction exportTransaction=ExportTransaction();
+
 
 
 

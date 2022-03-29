@@ -21,7 +21,7 @@ class ViewTransactionTimeLineResponse{
         mobile: json['data']['mobile'],
         input: json['data']['input'],
         channel: json['data']['channel'],
-        history: json['data']['history']
+        history:json['data']['history']
       )
     );
   }
@@ -37,7 +37,7 @@ class DataValue{
   bool? mobile;
   List? input;
   dynamic channel;
-  List<History>? history;
+  List? history;
 
   DataValue(
   {
@@ -53,11 +53,22 @@ class DataValue{
 // "type": "action",
 // "message": "Set payment method to: bank",
 // "time": 13
-class History {
+class ViewTransactionTimeLineHistory {
   final String? type;
   final String? message;
-  final String? time;
+  final int? time;
 
-  History({this.type, this.message, this.time});
+  ViewTransactionTimeLineHistory({this.type, this.message, this.time});
+
+  factory ViewTransactionTimeLineHistory.fromJson(Map<dynamic, dynamic> json){
+    return ViewTransactionTimeLineHistory(
+        type: json['type'],
+      message: json['message'],
+      time: json['time']
+    );
+  }
 
 }
+
+/// how to use the ViewTransactionTimeLineHistory
+///

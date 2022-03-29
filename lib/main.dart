@@ -2,10 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:royal_palm_villa/Models/models/transaction/chargeAuthorization.dart';
-import 'package:royal_palm_villa/Models/models/transaction/listTransaction.dart';
-import 'package:royal_palm_villa/Models/models/transaction/totalTransaction.dart';
-import 'package:royal_palm_villa/Models/models/transaction/verifyTransaction.dart';
-import 'package:royal_palm_villa/Models/services/transaction/verifyTransaction.dart';
+import 'package:royal_palm_villa/Models/models/transaction/exportTransaction.dart';
+import 'package:royal_palm_villa/Models/models/transaction/viewTransactionTimeLine.dart';
 import 'package:royal_palm_villa/Models/utilities/constants.dart';
 
 void main() {
@@ -40,8 +38,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  ChargeAuthorizationResponse? transaction;
-  TotalTransactionResponse? listOfTransactionResponse;
+  ExportTransactionResponse? transaction;
+  ViewTransactionTimeLineResponse? listOfTransactionResponse;
 
 
 
@@ -53,7 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _incrementCounter() async{
-       listOfTransactionResponse=await totalTransaction.totalTransactionFunction();
+       listOfTransactionResponse=await viewTransactionTimeLine.viewTransactionTimeLine(transactionId:1695885157 );
+       transaction=await exportTransaction.exportTransaction();
        setState(() {
 
        });
@@ -68,26 +67,43 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(widget.title),
       ),
-      body: listOfTransactionResponse==null?const CircularProgressIndicator(): Column(
-        children: [
-          Text(
-            '${
-            listOfTransactionResponse!.message
-            }'
-          ),    Text(
-            '${
-            listOfTransactionResponse!.data!.totalVolumeByCurrency!.amount
-            }'
-          ),    Text(
-            '${
-            listOfTransactionResponse!.data!.uniqueCustomers
-            }'
-          ),    Text(
-            '${
-            listOfTransactionResponse!.data!.pendingTransferByCurrency!.currency
-            }'
-          ),
-        ],
+      body: listOfTransactionResponse==null?const CircularProgressIndicator(): SingleChildScrollView(
+        child: Column(
+          children: [
+            Text(
+              '${
+              transaction!.message
+              }'
+            ),  SelectableText(
+              '${
+              transaction!.data!.csvDownloadUrl
+              }'
+            ),
+
+            ListView.builder(
+              shrinkWrap: true,
+                itemCount: listOfTransactionResponse!.data!.history!.length,
+                itemBuilder: (context,index){
+              return Column(
+                children: [
+                  Text(
+                      '${
+                          ViewTransactionTimeLineHistory.fromJson(listOfTransactionResponse!.data!.history![index]).type
+                      }'
+                  ),    Text(
+                      '${
+                          ViewTransactionTimeLineHistory.fromJson( listOfTransactionResponse!.data!.history![index]).message
+                      }'
+                  ),    Text(
+                      '${
+                          ViewTransactionTimeLineHistory.fromJson(listOfTransactionResponse!.data!.history![index])
+                              .time            }'
+                  ),
+                ],
+              );
+            })
+          ],
+        ),
       )
               /*Text(
                '${verificationTransactionDataValue!.data!.amount}'), Text(
