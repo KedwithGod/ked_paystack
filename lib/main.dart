@@ -1,7 +1,6 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:royal_palm_villa/Models/models/transaction/chargeAuthorization.dart';
 import 'package:royal_palm_villa/Models/models/transaction/exportTransaction.dart';
 import 'package:royal_palm_villa/Models/models/transaction/viewTransactionTimeLine.dart';
 import 'package:royal_palm_villa/Models/utilities/constants.dart';
