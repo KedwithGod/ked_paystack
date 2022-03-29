@@ -69,10 +69,24 @@ class _MyHomePageState extends State<MyHomePage> {
       body: listOfTransactionResponse==null?const CircularProgressIndicator(): SingleChildScrollView(
         child: Column(
           children: [
-            Text(
-              '${
-              transaction!.message
-              }'
+        Container(
+        decoration: BoxDecoration(
+        border: Border.all(color: Colors.white10.withAlpha(80)),
+      borderRadius: BorderRadius.circular(20),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.white.withAlpha(100),
+          blurRadius: 10.0,
+          spreadRadius: 0.0,
+        ),
+      ],
+      color: Colors.white.withOpacity(0.2),
+    ),
+              child: Text(
+                '${
+                transaction!.message
+                }'
+              ),
             ),  SelectableText(
               '${
               transaction!.data!.csvDownloadUrl
