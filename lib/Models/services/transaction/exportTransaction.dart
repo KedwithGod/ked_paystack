@@ -18,7 +18,11 @@ class ExportTransaction{
     String? currency,
     int? settlementId,
     String? amount,String? status, // failed, success, abandoned
-
+        // get time in DateTime then convert it to iso8601 to fetch it from net
+        //DateTime now = DateTime.now();
+        // String isoDate = now.toIso8601String();
+        dynamic to='',
+        dynamic from=''
 
 }
       ) async{
@@ -27,7 +31,13 @@ class ExportTransaction{
     var headers = {
       'Authorization': 'Bearer $PAYSTACK_KEY'
     };
-    var request = http.MultipartRequest('GET', Uri.parse('https://api.paystack.co/transaction/export'));
+    var request = http.MultipartRequest(
+        'GET', Uri.parse(
+        'https://api.paystack.co/transaction/export?perPage=$perPage&page=$page'
+            '&to=${to==""?"":to.toIso8601String()}'
+            '&from=${from==""?"":from.toIso8601String()}&customer=$customerId&status=$status'
+            '&currency=$currency&amount=$amount&settled=$settled&settlement=$settlementId&'
+            'payment_page=$paymentPageId'));
 
     request.headers.addAll(headers);
 
