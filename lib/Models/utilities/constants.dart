@@ -12,6 +12,7 @@ import 'package:royal_palm_villa/Models/services/transaction/fetchTransaction.da
 import 'package:royal_palm_villa/Models/services/transaction/initializePayment.dart';
 import 'package:royal_palm_villa/Models/services/miscellaneous/listOfBanks.dart';
 import 'package:royal_palm_villa/Models/services/transaction/listTransaction.dart';
+import 'package:royal_palm_villa/Models/services/transaction/partailDebit.dart';
 import 'package:royal_palm_villa/Models/services/transaction/totalTransaction.dart';
 import 'package:royal_palm_villa/Models/services/transaction/verifyTransaction.dart';
 import 'package:royal_palm_villa/Models/services/transaction/viewTransactionTimeline.dart';
@@ -41,6 +42,7 @@ ChargeAuthorization chargeAuthorization=ChargeAuthorization();
 TotalTransaction totalTransaction=TotalTransaction();
 ViewTransactionTimeLine viewTransactionTimeLine=ViewTransactionTimeLine();
 ExportTransaction exportTransaction=ExportTransaction();
+PartialDebit partialDebit=PartialDebit();
 
 
 

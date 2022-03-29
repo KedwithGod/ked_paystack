@@ -1,0 +1,3 @@
+Transaction Splits
+The Transaction Splits API enables merchants split the settlement for a transaction across their
+ payout account, and one or more Subaccounts.
