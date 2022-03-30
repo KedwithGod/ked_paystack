@@ -1,3 +1,9 @@
 Transaction Splits
 The Transaction Splits API enables merchants split the settlement for a transaction across their
  payout account, and one or more Subaccounts.
+ ***Path Param***
+ this is the variable that is added to the url using "/"
+ ***Query Param***
+ This is a variable that is added to the url using "?" and join together with "&"
+ *** Body Param***
+ This parameter is added to url in from of a map to the body of the url of the api

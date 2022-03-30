@@ -1,7 +1,7 @@
 // class to display the list of transaction user has carried out
 // this uses the @reusable class of TransactionList
 
-import 'package:royal_palm_villa/Models/utilities/reusableService.dart';
+import '../reusableServices/transactionList.dart';
 
 class ListOfTransaction{
 

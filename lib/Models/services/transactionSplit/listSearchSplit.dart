@@ -1,48 +1,53 @@
-//List/Search Splits
-// List/search for the transaction splits available on your integration
-
-import 'package:royal_palm_villa/Models/models/transactionSplit/listSearchSplit.dart';
-
-import '../../utilities/constants.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-
-class ListSearchSplit{
-  // function to list transaction list
-  listSearchSplit(
-      {String? name='',
-      dynamic active='', // boolean
-      dynamic sortBy,// String
-      dynamic perPage, // int
-      dynamic page, // int
-      // get time in DateTime then convert it to iso8601 to fetch it from net
-      //DateTime now = DateTime.now();
-      // String isoDate = now.toIso8601String();
-      dynamic to = '',
-      dynamic from = ''})async {
-  Map<String, String> header = { 'Authorization': 'Bearer $PAYSTACK_KEY'};
-  //var data = jsonEncode({"email": "$email", "password": "$password"});
-  var url = 'https://api.paystack.co/split?name=$name&active=$active&sort_by=$sortBy'
-      'perPage=$perPage&page=$page&to=${to==""?"":to.toIso8601String()}&from=${from==""?"":from.toIso8601String()}';
-  var respond=http.get(Uri.parse(url), headers: header).then((response) {
-    print("Response status: ${response.statusCode}");
-    print("Response body: ${response.body}");
-    print("Response header: ${response.headers})");
-    var parsed=response.body ;
-    var decoded =json.decode(parsed);
-    return ListSearchSplitResponse.fromJson(decoded);
-  });
-  respond.then((listSearchSplit) {
-  print(listSearchSplit.status);
-  print(listSearchSplit.message);
-  });
-  return respond;
-}
-
-}
+// list of request on the list and search split reusable service class
 
 
+import 'package:royal_palm_villa/Models/utilities/constants.dart';
 
+// fetch list by name
+listSearchSplitByNameParam({required String name})=>listSearchSplit.listSearchSplit(
+  name: name
+);
+
+// fetch list by active status
+listSearchSplitByActiveParam({required bool active})=>listSearchSplit.listSearchSplit(
+    active: active
+);
+// fetch list by page number
+listSearchSplitByPageNumberParam({required int pageNumber})=>listSearchSplit.listSearchSplit(
+    page: pageNumber
+);
+
+// specify the number of record per page
+listSearchSplitByRecordPerPageParam({required int recordPerPage})=>listSearchSplit.listSearchSplit(
+    perPage: recordPerPage
+);
+// specify sort by
+listSearchSplitBySortByParam({required int sortBy})=>listSearchSplit.listSearchSplit(
+      sortBy: sortBy
+);
+// specify starting Date for fetching record
+listSearchSplitByStartDateParam({required DateTime startDate})=>listSearchSplit.listSearchSplit(
+    from: startDate
+);
+
+// specify end date for fetching record
+listSearchSplitByEndDateParam({required DateTime endDate})=>listSearchSplit.listSearchSplit(
+    to: endDate
+);
+// specify range for fetching record
+listSearchSplitByRange({required DateTime startDate,required DateTime endDate})=>listSearchSplit.listSearchSplit(
+    to: endDate,from: startDate
+);
+
+// when you want to combine the whole parameter together
+
+listSearchSplitAllParam({required String name, required DateTime startDate,
+  required DateTime endDate,required int recordPerPage, required bool active,
+  required int pageNumber,
+  required int sortBy})=>listSearchSplit.listSearchSplit(
+    to: endDate,from: startDate,name: name, active: active
+    ,page: pageNumber, perPage: recordPerPage, sortBy: sortBy
+);
 ///Query Param
 // name
 // string
@@ -64,4 +69,3 @@ class ListSearchSplit{
 // A timestamp from which to start listing splits e.g. 2019-09-24T00:00:05.000Z, 2019-09-21
 // to
 // datetime
-// A timestamp at which to stop listing splits e.g. 2019-09-24T00:00:05.000Z, 2019-09-21
