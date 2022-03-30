@@ -6,7 +6,9 @@ import 'package:royal_palm_villa/Models/services/accountVerification/bvnMatch.da
 import 'package:royal_palm_villa/Models/services/accountVerification/resolvePhoneNumber.dart';
 import 'package:royal_palm_villa/Models/services/controlPanel/fetchPaymentSession.dart';
 import 'package:royal_palm_villa/Models/services/controlPanel/updatePaymentSession.dart';
+import 'package:royal_palm_villa/Models/services/customer/createCustomer.dart';
 import 'package:royal_palm_villa/Models/services/reusableServices/listAndSearchSplit.dart';
+import 'package:royal_palm_villa/Models/services/reusableServices/listCustomer.dart';
 import 'package:royal_palm_villa/Models/services/transaction/chargeAuthorization.dart';
 import 'package:royal_palm_villa/Models/services/transaction/exportTransaction.dart';
 import 'package:royal_palm_villa/Models/services/transaction/fetchTransaction.dart';
@@ -17,6 +19,11 @@ import 'package:royal_palm_villa/Models/services/transaction/partailDebit.dart';
 import 'package:royal_palm_villa/Models/services/transaction/totalTransaction.dart';
 import 'package:royal_palm_villa/Models/services/transaction/verifyTransaction.dart';
 import 'package:royal_palm_villa/Models/services/transaction/viewTransactionTimeline.dart';
+import 'package:royal_palm_villa/Models/services/transactionSplit/addUpdateSplitSubAccount.dart';
+import 'package:royal_palm_villa/Models/services/transactionSplit/createSplit.dart';
+import 'package:royal_palm_villa/Models/services/transactionSplit/fetchSplitTransaction.dart';
+import 'package:royal_palm_villa/Models/services/transactionSplit/removeSubAccount.dart';
+import 'package:royal_palm_villa/Models/services/transactionSplit/updateSplitTranaction.dart';
 
 import '../services/accountVerification/bvnVerification.dart';
 
@@ -45,6 +52,13 @@ ViewTransactionTimeLine viewTransactionTimeLine=ViewTransactionTimeLine();
 ExportTransaction exportTransaction=ExportTransaction();
 PartialDebit partialDebit=PartialDebit();
 ListSearchSplit listSearchSplit=ListSearchSplit();
+FetchSplitTransaction fetchSplitTransaction=FetchSplitTransaction();
+UpdateSplitTransaction updateSplitTransaction=UpdateSplitTransaction();
+AddUpdateSplitSubAccount addUpdateSplitSubAccount=AddUpdateSplitSubAccount();
+RemoveSubAccount removeSubAccount=RemoveSubAccount();
+CreateSplit createSplit=CreateSplit();
+CreateCustomer createCustomer=CreateCustomer();
+ListOfCustomer listOfCustomer =ListOfCustomer();
 
 
 

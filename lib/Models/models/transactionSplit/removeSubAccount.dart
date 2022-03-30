@@ -1,14 +1,14 @@
 // modal class for the response printed out when a subAccount is
 // removed from the user integration
 
-class RemoveSubAccount{
+class RemoveSubAccountResponse{
   bool? status;
   String? message;
-  RemoveSubAccount({
+  RemoveSubAccountResponse({
     this.message,this.status
 });
-  factory RemoveSubAccount.fromJson(Map<dynamic, dynamic> json){
-    return RemoveSubAccount(
+  factory RemoveSubAccountResponse.fromJson(Map<dynamic, dynamic> json){
+    return RemoveSubAccountResponse(
       status: json['status'],
       message: json['message']
     );
