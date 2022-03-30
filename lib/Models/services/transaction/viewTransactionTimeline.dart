@@ -2,7 +2,6 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:royal_palm_villa/Models/models/transaction/totalTransaction.dart';
 import 'package:royal_palm_villa/Models/utilities/constants.dart';
 
 import '../../models/transaction/viewTransactionTimeLine.dart';
