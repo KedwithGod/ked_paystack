@@ -49,7 +49,23 @@ class FetchCustomerResponse{
                     accountType:json['data']['dedicated_account']['account_type'],
                     integration:json['data']['dedicated_account']['integration'],
                 ),
-                splitConfiguration:
+                splitConfiguration: FetchCustomerSplitConfiguration(
+                    id:json['data']['dedicated_account']['split_config']['id'],
+                    name:json['data']['dedicated_account']['split_config']['name'],
+                    type:json['data']['dedicated_account']['split_config']['type'],
+                    currency:json['data']['dedicated_account']['split_config']['currency'],
+                    integration:json['data']['dedicated_account']['split_config']['integration'],
+                    domain:json['data']['dedicated_account']['split_config']['domain'],
+                    splitCode:json['data']['dedicated_account']['split_config']['split_code'],
+                    active:json['data']['dedicated_account']['split_config']['active'],
+                    bearerType:json['data']['dedicated_account']['split_config']['bearer_type'],
+                    bearerSubAccount:json['data']['dedicated_account']['split_config']['bearer_subaccount'],
+                    updatedAt:json['data']['dedicated_account']['split_config']['updatedAt'],
+                    createdAt:json['data']['dedicated_account']['split_config']['createdAt'],
+                    totalSubAccounts:json['data']['dedicated_account']['split_config']['total_subaccounts'],
+                    subAccounts:json['data']['dedicated_account']['split_config']['subaccounts'],
+                    isDynamic:json['data']['dedicated_account']['split_config']['is_dynamic'],
+                )
             ),
             transactions: json['data']['transactions'],
             subscription: json['data']['subscriptions'],
@@ -177,11 +193,12 @@ class FetchCustomerSplitConfiguration {
 // YYYY-MM-DD'T'hh:mm:ss.sTZD (e.g. 2015-12-11T20:28:30.45+01:00 or 2015-12-11T19:28:30.45Z)
   int? totalSubAccounts;
   List<dynamic>? subAccounts;
+  bool? isDynamic;
 
   FetchCustomerSplitConfiguration({
     this.name,this.id,this.type,this.createdAt,this.domain,this.integration,
     this.updatedAt,this.bearerSubAccount,this.bearerType,this.totalSubAccounts,
-    this.subAccounts,this.splitCode,this.active,this.currency
+    this.subAccounts,this.splitCode,this.active,this.currency,this.isDynamic
 });
 }
 

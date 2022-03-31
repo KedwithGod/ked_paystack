@@ -7,6 +7,9 @@ import 'package:royal_palm_villa/Models/services/accountVerification/resolvePhon
 import 'package:royal_palm_villa/Models/services/controlPanel/fetchPaymentSession.dart';
 import 'package:royal_palm_villa/Models/services/controlPanel/updatePaymentSession.dart';
 import 'package:royal_palm_villa/Models/services/customer/createCustomer.dart';
+import 'package:royal_palm_villa/Models/services/customer/updateCustomer.dart';
+import 'package:royal_palm_villa/Models/services/customer/validateCustomer.dart';
+import 'package:royal_palm_villa/Models/services/customer/whiteListBlackListCustomer.dart';
 import 'package:royal_palm_villa/Models/services/reusableServices/listAndSearchSplit.dart';
 import 'package:royal_palm_villa/Models/services/reusableServices/listCustomer.dart';
 import 'package:royal_palm_villa/Models/services/transaction/chargeAuthorization.dart';
@@ -26,6 +29,7 @@ import 'package:royal_palm_villa/Models/services/transactionSplit/removeSubAccou
 import 'package:royal_palm_villa/Models/services/transactionSplit/updateSplitTranaction.dart';
 
 import '../services/accountVerification/bvnVerification.dart';
+import '../services/customer/fetchCustomer.dart';
 
 
 
@@ -59,8 +63,10 @@ RemoveSubAccount removeSubAccount=RemoveSubAccount();
 CreateSplit createSplit=CreateSplit();
 CreateCustomer createCustomer=CreateCustomer();
 ListOfCustomer listOfCustomer =ListOfCustomer();
-
-
+FetchCustomer fetchCustomer=FetchCustomer();
+UpdateCustomer updateCustomer=UpdateCustomer();
+ValidateCustomer validateCustomer=ValidateCustomer();
+WhiteListBlackListCustomer whiteListBlackListCustomer=WhiteListBlackListCustomer();
 
 
 
