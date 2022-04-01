@@ -11,7 +11,10 @@ import 'package:royal_palm_villa/Models/services/customer/updateCustomer.dart';
 import 'package:royal_palm_villa/Models/services/customer/validateCustomer.dart';
 import 'package:royal_palm_villa/Models/services/customer/whiteListBlackListCustomer.dart';
 import 'package:royal_palm_villa/Models/services/dedicatedVirtualAccount/createDVA.dart';
-
+import 'package:royal_palm_villa/Models/services/dedicatedVirtualAccount/deActivateDVA.dart';
+import 'package:royal_palm_villa/Models/services/dedicatedVirtualAccount/fetchDVA.dart';
+import 'package:royal_palm_villa/Models/services/dedicatedVirtualAccount/listDVA.dart';
+import 'package:royal_palm_villa/Models/services/dedicatedVirtualAccount/splitDVA.dart';
 import 'package:royal_palm_villa/Models/services/miscellaneous/listOfBanks.dart';
 import 'package:royal_palm_villa/Models/services/reusableServices/listAndSearchSplit.dart';
 import 'package:royal_palm_villa/Models/services/reusableServices/listCustomer.dart';
@@ -29,7 +32,6 @@ import 'package:royal_palm_villa/Models/services/transactionSplit/createSplit.da
 import 'package:royal_palm_villa/Models/services/transactionSplit/fetchSplitTransaction.dart';
 import 'package:royal_palm_villa/Models/services/transactionSplit/removeSubAccount.dart';
 import 'package:royal_palm_villa/Models/services/transactionSplit/updateSplitTransaction.dart';
-
 import '../services/accountVerification/bvnVerification.dart';
 import '../services/customer/fetchCustomer.dart';
 import '../services/reusableServices/listDVA.dart';
@@ -72,6 +74,10 @@ ValidateCustomer validateCustomer=ValidateCustomer();
 WhiteListBlackListCustomer whiteListBlackListCustomer=WhiteListBlackListCustomer();
 CreateDVA createDVA=CreateDVA();
 ListDVA listDVA =ListDVA();
+ListDVAReusable listDVAReusable=ListDVAReusable();
+FetchDVA fetchDVA=FetchDVA();
+DeActivateDVA deActivateDVA=DeActivateDVA();
+SplitDVA splitDVA=SplitDVA();
 
 
 

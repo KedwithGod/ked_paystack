@@ -3,6 +3,8 @@
 import 'package:royal_palm_villa/Models/utilities/constants.dart';
 
 class ListDVAReusable{
+  // list DVA with active and currency provision
+  listDefaultDVA({required bool? active,required String? currency})=>listDVA.listDVA(active: active, currency: currency,);
   // fetch list wrt provider slug
   listDVAByProviderSlug({required bool? active,required String? providerSlug,
   required String? currency

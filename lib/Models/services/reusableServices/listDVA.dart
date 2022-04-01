@@ -1,8 +1,6 @@
 /// List Dedicated Accounts
-// List dedicated virtual accounts available on your integration.
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:royal_palm_villa/Models/models/dedicatedVirtualAccount/createDVA.dart';
 import 'package:royal_palm_villa/Models/models/dedicatedVirtualAccount/listDVA.dart';
 import '../../utilities/constants.dart';
 

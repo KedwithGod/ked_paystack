@@ -12,14 +12,8 @@ class ListDVAResponse{
     return ListDVAResponse(
         status: json['status'],
         message: json['message'],
-        data: json['data'],
-        meta:ListDVAMeta(
-            total:json['meta']['total'],
-            skipped:json['meta']['skipped'],
-            perPage:json['meta']['perPage'],
-            page:json['meta']['page'],
-            pageCount:json['meta']['pageCount'],
-        )
+        data: json['data']??[],
+
     );
   }
 }

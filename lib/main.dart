@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:royal_palm_villa/Models/models/dedicatedVirtualAccount/listDVA.dart';
 import 'package:royal_palm_villa/Models/models/transaction/exportTransaction.dart';
 import 'package:royal_palm_villa/Models/models/transaction/viewTransactionTimeLine.dart';
 import 'package:royal_palm_villa/Models/utilities/constants.dart';
@@ -37,7 +38,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  ExportTransactionResponse? transaction;
+  ListDVAResponse? transaction;
   ViewTransactionTimeLineResponse? listOfTransactionResponse;
 
 
@@ -51,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() async{
        listOfTransactionResponse=await viewTransactionTimeLine.viewTransactionTimeLine(transactionId:1695885157 );
-       transaction=await exportTransaction.exportTransaction();
+       transaction=await listDVAReusable.listDefaultDVA(active: true, currency: 'NGN');
        setState(() {
 
        });
@@ -62,6 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
     return Scaffold(
+      backgroundColor: Colors.green,
       appBar: AppBar(
 
         title: Text(widget.title),
@@ -89,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),  SelectableText(
               '${
-              transaction!.data!.csvDownloadUrl
+              transaction!.data!.length
               }'
             ),
 
