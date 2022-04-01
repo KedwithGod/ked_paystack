@@ -8,7 +8,7 @@ class UpdatePaymentSessionTimeOut{
 
   // to update payment timeout session for a transaction
   Future<dynamic> paymentSessionTimeoutFunction() async {
-    Map<String, String> header = { 'Authorization': 'Bearer $PAYSTACK_KEY'};
+    Map<String, String> header = { 'Authorization': 'Bearer $payStackKey'};
     //var data = jsonEncode({"email": "$email", "password": "$password"});
     var url = 'https://api.paystack.co/integration/payment_session_timeout';
     var respond=http.put(Uri.parse(url), headers: header).then((response) {

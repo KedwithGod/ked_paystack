@@ -29,7 +29,7 @@ class ExportTransaction{
 
 
     var headers = {
-      'Authorization': 'Bearer $PAYSTACK_KEY'
+      'Authorization': 'Bearer $payStackKey'
     };
     var request = http.MultipartRequest(
         'GET', Uri.parse(

@@ -14,7 +14,7 @@ class UpdateSplitTransaction {
       required bool active , // boolean
         String? bearerType,
         String? bearerSubAccount}) async {
-    Map<String, String> header = {'Authorization': 'Bearer $PAYSTACK_KEY'};
+    Map<String, String> header = {'Authorization': 'Bearer $payStackKey'};
     var data = jsonEncode({
       "name": "$name", "active": "$active",
       if(bearerType!=null)'bearer_type':bearerType,

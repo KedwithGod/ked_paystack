@@ -12,7 +12,7 @@ class BVNMatch{
   // function to match user bvn with users account number
   
   bvnMatchFunction(){
-    Map<String, String> header = { 'Authorization': 'Bearer $PAYSTACK_KEY'};
+    Map<String, String> header = { 'Authorization': 'Bearer $payStackKey'};
     var data = jsonEncode( { "bvn": '$bvn',
       "account_number": "$accountNumber",
       "bank_code":"$bankCode"

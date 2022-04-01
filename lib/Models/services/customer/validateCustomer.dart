@@ -17,7 +17,7 @@ class ValidateCustomer {
     required String? lastName
 
   }) async {
-    var headers = {'Authorization': 'Bearer $PAYSTACK_KEY'};
+    var headers = {'Authorization': 'Bearer $payStackKey'};
     var request = http.Request(
         'POST',
         Uri.parse(

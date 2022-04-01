@@ -11,7 +11,7 @@ class ResolvePhoneNumber{
   //function to resolve phone number using true caller api
   Future<dynamic> resolvePhoneNumberFunction() async {
 
-    Map<String, String> header = { 'Authorization': 'Bearer $PAYSTACK_KEY'};
+    Map<String, String> header = { 'Authorization': 'Bearer $payStackKey'};
     var data = jsonEncode(
       { "verification_type": "truecaller",
         "phone": "2348151535983\n",

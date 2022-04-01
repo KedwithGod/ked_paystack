@@ -20,7 +20,7 @@ class PaymentSessionTimeout{
   // to retrieve payment timeout session for a transaction
   Future<dynamic> paymentSessionTimeoutFunction() async {
     var headers = {
-      'Authorization': 'Bearer $PAYSTACK_KEY'
+      'Authorization': 'Bearer $payStackKey'
     };
     var request = http.Request('GET', Uri.parse(
         'https://api.paystack.co/integration/payment_session_timeout'));

@@ -8,7 +8,7 @@ import '../../utilities/constants.dart';
 class FetchSplitTransaction{
   // function to fetch split transaction with an id
   Map<String, String> header = {
-    'Authorization': 'Bearer $PAYSTACK_KEY',
+    'Authorization': 'Bearer $payStackKey',
     "Content-Type": "application/json"
   };
   fetchSplitTransaction(

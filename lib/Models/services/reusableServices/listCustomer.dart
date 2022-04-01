@@ -22,7 +22,7 @@ class ListOfCustomer{
 }
      ) async{
     var headers = {
-      'Authorization': 'Bearer $PAYSTACK_KEY',
+      'Authorization': 'Bearer $payStackKey',
     };
     var request = http.Request('GET', Uri.parse('https://api.paystack.co/customer?'
         'page=$page&perPage=$recordPerPage&to=${endDate==""?"":endDate.toIso8601String()}&from=${startDate==""?"":startDate.toIso8601String()}'));

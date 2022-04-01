@@ -10,7 +10,7 @@ class ChargeAuthorization{
   // function to charge transaction
   chargeAuthorizationFunction() async{
     var headers = {
-      'Authorization': 'Bearer $PAYSTACK_KEY',
+      'Authorization': 'Bearer $payStackKey',
       'Content-Type': 'application/json'
     };
     var request = http.Request('POST', Uri.parse('https://api.paystack.co/transaction/charge_authorization'));

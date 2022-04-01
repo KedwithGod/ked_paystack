@@ -26,7 +26,7 @@ class InitializeTransaction{
 
       ) async{
     var headers = {
-      'Authorization': 'Bearer $PAYSTACK_KEY',
+      'Authorization': 'Bearer $payStackKey',
       'Content-Type': 'application/json'
     };
     var request = http.Request('POST', Uri.parse('https://api.paystack.co/transaction/initialize'));

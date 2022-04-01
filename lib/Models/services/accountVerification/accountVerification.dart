@@ -16,7 +16,7 @@ class AccountVerification{
 
   // account verification
   Future<dynamic> accountNumberVerification() async {
-    Map<String, String> header = { 'Authorization': 'Bearer $PAYSTACK_KEY'};
+    Map<String, String> header = { 'Authorization': 'Bearer $payStackKey'};
     //var data = jsonEncode({"email": "$email", "password": "$password"});
     var url = 'https://api.paystack.co/bank/resolve?account_number=$accountNumber&bank_code=$bankCode';
     var respond=http.get(Uri.parse(url), headers: header).then((response) {

@@ -23,7 +23,7 @@ class TransactionList{
 
         )async{
 
-    Map<String, String> header = { 'Authorization': 'Bearer $PAYSTACK_KEY'};
+    Map<String, String> header = { 'Authorization': 'Bearer $payStackKey'};
     //var data = jsonEncode({"email": "$email", "password": "$password"});
     var url = 'https://api.paystack.co/transaction?status=$status&perPage=$perPage&page=$page&amount=$amount&customer=$customerId&to=${to==""?"":to.toIso8601String()}&from=${from==""?"":from.toIso8601String()}';
     var respond=http.get(Uri.parse(url), headers: header).then((response) {

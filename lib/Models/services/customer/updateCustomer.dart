@@ -20,7 +20,7 @@ class UpdateCustomer{
 }
      ) async{
     var headers = {
-      'Authorization': 'Bearer $PAYSTACK_KEY',
+      'Authorization': 'Bearer $payStackKey',
       'Content-Type': 'application/json'
     };
     var request = http.Request('PUT', Uri.parse('https://api.paystack.co/customer/$idOrCustomerCode'));

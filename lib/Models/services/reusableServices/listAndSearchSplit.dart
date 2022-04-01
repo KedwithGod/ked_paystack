@@ -21,7 +21,7 @@ class ListSearchSplit{
         // String isoDate = now.toIso8601String();
         dynamic to = '',
         dynamic from = ''})async {
-    Map<String, String> header = { 'Authorization': 'Bearer $PAYSTACK_KEY'};
+    Map<String, String> header = { 'Authorization': 'Bearer $payStackKey'};
     //var data = jsonEncode({"email": "$email", "password": "$password"});
     var url = 'https://api.paystack.co/split?name=$name&active=$active&sort_by=$sortBy'
         'perPage=$perPage&page=$page&to=${to==""?"":to.toIso8601String()}&from=${from==""?"":from.toIso8601String()}';

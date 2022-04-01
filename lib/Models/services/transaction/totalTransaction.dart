@@ -10,7 +10,7 @@ class TotalTransaction{
   // function to fetch total transaction on your integration
       totalTransactionFunction()async{
         var headers = {
-          'Authorization': 'Bearer $PAYSTACK_KEY'
+          'Authorization': 'Bearer $payStackKey'
         };
         var request = http.MultipartRequest('GET', Uri.parse('https://api.paystack.co/transaction/totals'));
 

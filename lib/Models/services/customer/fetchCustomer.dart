@@ -11,7 +11,7 @@ class FetchCustomer{
       {required String? emailOrCustomerCode}
       ) async{
     var headers = {
-      'Authorization': 'Bearer $PAYSTACK_KEY'
+      'Authorization': 'Bearer $payStackKey'
     };
     var request = http.MultipartRequest('GET', Uri.parse('https://api.paystack.co/customer/$emailOrCustomerCode'));
 

@@ -15,7 +15,7 @@ class DeActiveCustomerAuthorization{
       required String authorizationCode
     }
       )async{
-    Map<String, String> header = { 'Authorization': 'Bearer $PAYSTACK_KEY',
+    Map<String, String> header = { 'Authorization': 'Bearer $payStackKey',
       "Content-Type": "application/json"
     };
     var data = jsonEncode({ "authorization_code": authorizationCode });

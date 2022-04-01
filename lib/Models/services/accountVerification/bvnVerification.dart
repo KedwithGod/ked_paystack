@@ -10,7 +10,7 @@ class BvnVerification{
   BvnVerification({this.bvnNumber});
   // bvn verification from backend
   Future<dynamic> bvnVerification() async {
-    Map<String, String> header = { 'Authorization': 'Bearer $PAYSTACK_KEY'};
+    Map<String, String> header = { 'Authorization': 'Bearer $payStackKey'};
     //var data = jsonEncode({"email": "$email", "password": "$password"});
     var url = 'https://api.paystack.co/bank/resolve_bvn/$bvnNumber';
     var respond=http.get(Uri.parse(url), headers: header).then((response) {

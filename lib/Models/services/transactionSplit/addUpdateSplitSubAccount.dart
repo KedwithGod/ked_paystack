@@ -15,7 +15,7 @@ class AddUpdateSplitSubAccount{
      required String subAccount, // boolean
     required int? share,// String
     })async {
-  Map<String, String> header = { 'Authorization': 'Bearer $PAYSTACK_KEY'};
+  Map<String, String> header = { 'Authorization': 'Bearer $payStackKey'};
   // body parameter
   var data = jsonEncode({ "subaccount": subAccount, "share": share });
   var url = 'https://api.paystack.co/split/$id/subaccount/add';

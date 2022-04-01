@@ -10,15 +10,17 @@ import 'package:royal_palm_villa/Models/services/customer/createCustomer.dart';
 import 'package:royal_palm_villa/Models/services/customer/updateCustomer.dart';
 import 'package:royal_palm_villa/Models/services/customer/validateCustomer.dart';
 import 'package:royal_palm_villa/Models/services/customer/whiteListBlackListCustomer.dart';
+import 'package:royal_palm_villa/Models/services/dedicatedVirtualAccount/createDVA.dart';
+
+import 'package:royal_palm_villa/Models/services/miscellaneous/listOfBanks.dart';
 import 'package:royal_palm_villa/Models/services/reusableServices/listAndSearchSplit.dart';
 import 'package:royal_palm_villa/Models/services/reusableServices/listCustomer.dart';
 import 'package:royal_palm_villa/Models/services/transaction/chargeAuthorization.dart';
 import 'package:royal_palm_villa/Models/services/transaction/exportTransaction.dart';
 import 'package:royal_palm_villa/Models/services/transaction/fetchTransaction.dart';
 import 'package:royal_palm_villa/Models/services/transaction/initializePayment.dart';
-import 'package:royal_palm_villa/Models/services/miscellaneous/listOfBanks.dart';
 import 'package:royal_palm_villa/Models/services/transaction/listTransaction.dart';
-import 'package:royal_palm_villa/Models/services/transaction/partailDebit.dart';
+import 'package:royal_palm_villa/Models/services/transaction/partialDebit.dart';
 import 'package:royal_palm_villa/Models/services/transaction/totalTransaction.dart';
 import 'package:royal_palm_villa/Models/services/transaction/verifyTransaction.dart';
 import 'package:royal_palm_villa/Models/services/transaction/viewTransactionTimeline.dart';
@@ -26,10 +28,11 @@ import 'package:royal_palm_villa/Models/services/transactionSplit/addUpdateSplit
 import 'package:royal_palm_villa/Models/services/transactionSplit/createSplit.dart';
 import 'package:royal_palm_villa/Models/services/transactionSplit/fetchSplitTransaction.dart';
 import 'package:royal_palm_villa/Models/services/transactionSplit/removeSubAccount.dart';
-import 'package:royal_palm_villa/Models/services/transactionSplit/updateSplitTranaction.dart';
+import 'package:royal_palm_villa/Models/services/transactionSplit/updateSplitTransaction.dart';
 
 import '../services/accountVerification/bvnVerification.dart';
 import '../services/customer/fetchCustomer.dart';
+import '../services/reusableServices/listDVA.dart';
 
 
 
@@ -67,10 +70,12 @@ FetchCustomer fetchCustomer=FetchCustomer();
 UpdateCustomer updateCustomer=UpdateCustomer();
 ValidateCustomer validateCustomer=ValidateCustomer();
 WhiteListBlackListCustomer whiteListBlackListCustomer=WhiteListBlackListCustomer();
+CreateDVA createDVA=CreateDVA();
+ListDVA listDVA =ListDVA();
 
 
 
 //3. String constants
 
 //4. api keys
-const String PAYSTACK_KEY = 'sk_test_35fcd58e67d51a0c813e2ad1bc5f5a0918fa0270';
+const String payStackKey = 'sk_test_35fcd58e67d51a0c813e2ad1bc5f5a0918fa0270';

@@ -12,7 +12,7 @@ class RemoveSubAccount{
     required int? id,
     required String subAccount, // boolean// String
   })async {
-    Map<String, String> header = { 'Authorization': 'Bearer $PAYSTACK_KEY'};
+    Map<String, String> header = { 'Authorization': 'Bearer $payStackKey'};
     // body parameter
     var data = jsonEncode({ "subaccount": subAccount });
     var url = 'https://api.paystack.co/split/$id/subaccount/remove';

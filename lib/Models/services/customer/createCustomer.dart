@@ -16,7 +16,7 @@ class CreateCustomer {
         //town, location and other info you need to get from the customer
       Map? metaData}) async {
     Map<String, String> header = {
-      'Authorization': 'Bearer $PAYSTACK_KEY',
+      'Authorization': 'Bearer $payStackKey',
       "Content-Type": "application/json"
     };
     Map data = {
