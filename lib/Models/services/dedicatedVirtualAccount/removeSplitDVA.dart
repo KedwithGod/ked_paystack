@@ -10,7 +10,9 @@ import '../../utilities/constants.dart';
 class RemoveSplitDVA{
 
   // function to remove split from DVA
-  removeSplitDVa()async{
+  removeSplitDVa({
+    required String dedicatedVAid
+})async{
     var headers = {
       'Authorization': 'Bearer $payStackKey',
     };
@@ -31,7 +33,7 @@ class RemoveSplitDVA{
     return respond;
   }
   }
-}
+
 
 ///Body Param
 // account_number
